@@ -7,8 +7,12 @@ These files are used by WelsonJS - https://github.com/gnh1201/welsonjs
     * jopbrown/gtk-server [gtk-server-2.4.5-gtk-2.24.32-win64] - https://github.com/jopbrown/gtk-server
     * libffi-7.dll [Modified] - Modified DLL binary from GIMP
   * Compression
-    * UnZip for Windows - http://gnuwin32.sourceforge.net/packages/unzip.htm
-    * 7-Zip precompiled binaries [00b052b] - https://github.com/develar/7zip-bin
+    * Zip for Windows [3.0, 13 July 2008] - http://gnuwin32.sourceforge.net/packages/zip.htm
+    * UnZip for Windows [5.52, 14 February 2005]- http://gnuwin32.sourceforge.net/packages/unzip.htm
+    * Tar [1.13, 3 October 2003] - http://gnuwin32.sourceforge.net/packages/gtar.htm
+    * MsCompress [0.3, 14 March 2004] - http://gnuwin32.sourceforge.net/packages/mscompress.htm
+    * bzip2-windows [v1.0.8.0] - https://github.com/philr/bzip2-windows
+    * 7-Zip (x64/x86/ARM) [21.07 (2021-12-26)] - https://www.7-zip.org/
   * Python Windows embeddable package [3.10.2]
     * 64-bit - https://www.python.org/downloads/release/python-3102/
     * 32-bit - https://www.python.org/downloads/release/python-3102/
@@ -23,12 +27,14 @@ These files are used by WelsonJS - https://github.com/gnh1201/welsonjs
     * DDoSolitary/shadowsocks-libev-win [Build 2022-01-18] - https://github.com/DDoSolitary/shadowsocks-libev-win
     * NMAP for Windows [7.92] - https://nmap.org/download.html
     * THC Hydra for Windows [v9.1] - https://github.com/vanhauser-thc/thc-hydra
+  * SDK (Software Development Kit)
+    * Android SDK Platform Tools [r33.0.0] - https://developer.android.com/studio/releases/platform-tools
   * Runtimes
     * ChakraCore (x64/x86/ARM) [v1.11.24] - https://github.com/chakra-core/ChakraCore
     * bytecodealliance/wasm-micro-runtime [44d75ce] - https://github.com/bytecodealliance/wasm-micro-runtime
 
 ## Updated
-  * 07:45:21 (UTC), 23 February 2022
+  * 02:23:37 (UTC), Friday, 4 March 2022
 
 ## Download Link
-  * https://drive.google.com/file/d/1A70gwH19fMA8xoucR7ClFvTFf-Qn4mTc/view?usp=sharing
+  * https://drive.google.com/file/d/10ZbGRQzYFKstLfm6YtgxDlQTih2wTZAM/view?usp=sharing

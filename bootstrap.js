@@ -4,11 +4,11 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+var STD = require("lib/std");
 var PS = require("lib/powershell");
 var REG = require("lib/registry");
 var SYS = require("lib/system");
 var SHELL = require("lib/shell");
-//var UPDATER = require("lib/updater");
 
 var appName = "welsonjs";
 
@@ -18,9 +18,9 @@ exports.main = function(args) {
     PS.execCommand("dir | Unblock-File");
 
     // Allow CROS to ADO
-    console.log("Adjusting CROS policy to ADO...");
-    REG.write(REG.HKCU, "SOFTWARE\\Policies\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Lockdown_Zones\\4", "1406", "00000000", REG.DWORD);
-    REG.write(REG.HKLM, "SOFTWARE\\Policies\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Lockdown_Zones\\4", "1406", "00000000", REG.DWORD);
+    //console.log("Adjusting CROS policy to ADO...");
+    //REG.write(REG.HKCU, "SOFTWARE\\Policies\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Lockdown_Zones\\4", "1406", "00000000", REG.DWORD);
+    //REG.write(REG.HKLM, "SOFTWARE\\Policies\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Lockdown_Zones\\4", "1406", "00000000", REG.DWORD);
 
     // Register HTA file association
     console.log("Registering HTA file association...");
@@ -33,10 +33,6 @@ exports.main = function(args) {
     REG.write(REG.HKCR, appName + "\\DefaultIcon", "", SYS.getCurrentScriptDirectory() + "\\app\\favicon.ico,0", REG.STRING);
     REG.write(REG.HKCR, appName + "\\shell\\open\\command", "", "cmd.exe /c cscript " + SYS.getCurrentScriptDirectory() + "\\app.js uriloader \"%1\"", REG.STRING);
 
-    // check updates
-    //console.log("Checking updates...");
-    //UPDATER.checkUpdates();
-
     // open web application
     console.log("Trying open GUI...");
 
@@ -46,22 +42,24 @@ exports.main = function(args) {
         try {
             var process = processList[i];
             if (process.Caption == "mshta.exe") {
-                console.warn("Will be kill process ID: " + process.ProcessID);
-                SYS.killProcess(process.ProcessID);
-                sleep(1000);
+                //console.warn("Will be kill process ID:", process.ProcessID);
+                //SYS.killProcess(process.ProcessID);
+                //sleep(1000);
+                STD.alert("Please close the running application (PID: " + process.processID + ")");
+                return 0;
             }
         } catch (e) {
             console.warn(e.message);
         }
     }
 
-    // open web application
-    if (typeof(args) !== "undefined") {
+    // Opening HTML application
+    if (typeof args !== "undefined") {
         SHELL.run(["app.hta"].concat(args));
     } else {
         SHELL.run("app.hta");
     }
 
-    // echo welcome
+    // print welcome
     console.log("welcome");
 };
